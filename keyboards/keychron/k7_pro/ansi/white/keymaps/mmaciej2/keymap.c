@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_LCTL,  KC_LGUI,  KC_LALT,                                KC_SPC,                                 KC_RALT, MO(WIN_FN1),MO(FN2), KC_LEFT,  KC_DOWN, KC_RGHT),
 
 [MAC_FN1] = LAYOUT_ansi_68(
-     KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  BL_DOWN,  BL_UP,    KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_DEL,             KC_TRNS,
+     KC_ESC,   KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  BL_DOWN,  BL_UP,    KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_DEL,     LCTL(LGUI(KC_Q)),
      KC_CAPS,  KC_TRNS,  KC_UP,    KC_TRNS,  KC_BSPC,  KC_HOME,  KC_PGUP,  KC_PSCR,  KC_SCRL,  KC_PAUS,  KC_UP,    KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,
      KC_TRNS,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_DEL,   KC_END,   KC_PGDN,  KC_TILD,  KC_INS,   KC_LEFT,  KC_DOWN,  KC_RGHT,            KC_TRNS,            KC_TRNS,
      KC_TRNS,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_VOLD,  KC_VOLU,  KC_MUTE,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_MENU,                      KC_TRNS,  KC_TRNS,  KC_TRNS,
