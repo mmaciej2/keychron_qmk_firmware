@@ -26,7 +26,7 @@ enum layers{
 };
 
 enum my_keycodes{
-  QUAD_SPC = SAFE_RANGE,
+  QUAD_SPC = 0x7E49,
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
