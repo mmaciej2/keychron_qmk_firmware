@@ -25,6 +25,23 @@ enum layers{
   FN2
 };
 
+enum my_keycodes{
+  QUAD_SPC = SAFE_RANGE,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+  case QUAD_SPC:
+    if (record->event.pressed) {
+      SEND_STRING("    ");
+    } else {
+      // do nothing on release
+    }
+    break;
+  }
+  return true;
+};
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [MAC_BASE] = LAYOUT_ansi_68(
      KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,   KC_BSPC,           KC_HOME,
@@ -45,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_CAPS,  KC_TRNS,  KC_UP,    KC_TRNS,  KC_BSPC,  KC_HOME,  KC_PGUP,  KC_PSCR,  KC_SCRL,  KC_PAUS,  KC_UP,    KC_TRNS,  KC_TRNS,  KC_TRNS,            KC_TRNS,
      KC_TRNS,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_DEL,   KC_END,   KC_PGDN,  KC_TILD,  KC_INS,   KC_LEFT,  KC_DOWN,  KC_RGHT,            KC_TRNS,            KC_TRNS,
      KC_TRNS,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_VOLD,  KC_VOLU,  KC_MUTE,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_MENU,                      KC_TRNS,  KC_TRNS,  KC_TRNS,
-     KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
+     KC_TRNS,  KC_TRNS,  KC_TRNS,                                QUAD_SPC,                                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
 
 [WIN_FN1] = LAYOUT_ansi_68(
      KC_GRV,   KC_BRID,  KC_BRIU,  KC_TASK,  KC_FILE,  BL_DOWN,  BL_UP,    KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,  KC_VOLU,  KC_DEL,             KC_TRNS,
